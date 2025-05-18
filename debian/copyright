@@ -4,7 +4,7 @@ Upstream-Contact: Charles Karney <charles@karney.com>
 Source: https://github.com/geographiclib/geographiclib
 
 Files: *
-Copyright: 2008-2023, Charles Karney <charles@karney.com>
+Copyright: 2008-2024, Charles Karney <charles@karney.com>
                 2009, Francesco Paolo Lovergine <frankie@debian.org>
 License: Expat
 

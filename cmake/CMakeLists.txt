@@ -16,13 +16,6 @@ else ()
   set (MSVC_TOOLSET_VERSION 0)
   set (MSVC_TOOLSET_MAJOR 0)
 endif ()
-if (CMAKE_CROSSCOMPILING)
-  # Ensure that all "true" (resp. "false") settings are represented by
-  # the same string.
-  set (CMAKE_CROSSCOMPILING_STR "ON")
-else ()
-  set (CMAKE_CROSSCOMPILING_STR "OFF")
-endif ()
 
 # geographiclib-config.cmake for the build tree
 set (PROJECT_ROOT_DIR "${PROJECT_BINARY_DIR}")
@@ -92,6 +85,7 @@ endif ()
 # Support for pkgconfig/geographiclib.pc
 set (prefix ${CMAKE_INSTALL_PREFIX})
 set (exec_prefix "\${prefix}")
+set (lib_postfix ${CMAKE_DEBUG_POSTFIX})
 set (libdir "\${exec_prefix}/${LIBDIR}")
 set (includedir "\${prefix}/${INCDIR}")
 set (bindir "\${exec_prefix}/${BINDIR}")

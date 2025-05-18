@@ -8,16 +8,11 @@ include /usr/share/dpkg/pkg-info.mk
 UPSTREAM_VERSION=$(shell echo $(DEB_VERSION_UPSTREAM) | sed -e 's/\+.*//')
 
 %:
-	dh $@ --with pkgkde_symbolshelper
+	dh $@
 
-override_dh_install:
+execute_before_dh_install:
 	# Remove duplicate license information
 	$(RM) debian/tmp/usr/share/doc/geographiclib/html/LICENSE.txt
-
-	# Remove .la files
-	$(RM) debian/tmp/usr/lib/*/*.la
-
-	dh_install
 
 override_dh_installchangelogs:
 	dh_installchangelogs NEWS

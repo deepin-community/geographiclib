@@ -1,5 +1,5 @@
-# SymbolsHelper-Confirmed: 2.2 amd64 arm64 armel armhf hppa hurd-i386 i386 m68k mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sh4 sparc64 x32
-libGeographicLib.so.24 #PACKAGE# #MINVER#
+# SymbolsHelper-Confirmed: 2.5 amd64
+libGeographicLib.so.26 #PACKAGE# #MINVER#
 * Build-Depends-Package: libgeographiclib-dev
  _ZGVZN13GeographicLib4Math4tandIdEET_S2_E8overflow@Base 1.42
  (arch=amd64 arm64 armel armhf hppa hurd-i386 i386 ia64 kfreebsd-amd64 kfreebsd-i386 m68k mips64el mipsel riscv64 sh4 sparc64 x32)_ZGVZN13GeographicLib4Math4tandIeEET_S2_E8overflow@Base 1.51
@@ -176,11 +176,11 @@ libGeographicLib.so.24 #PACKAGE# #MINVER#
  _ZN13GeographicLib18PolarStereographic8SetScaleEdd@Base 1.40
  _ZN13GeographicLib18PolarStereographicC1Eddd@Base 1.40
  _ZN13GeographicLib18PolarStereographicC2Eddd@Base 1.40
- (arch=alpha amd64 arm64 armel armhf hppa hurd-i386 i386 ia64 m68k mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sh4 sparc64 x32)_ZN13GeographicLib18SphericalHarmonic1C1ERKSt6vectorIdSaIdEES5_iiiS5_S5_iiidj@Base 1.51
- (arch=alpha amd64 arm64 armel armhf hppa hurd-i386 i386 ia64 m68k mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sh4 sparc64 x32)_ZN13GeographicLib18SphericalHarmonic1C2ERKSt6vectorIdSaIdEES5_iiiS5_S5_iiidj@Base 1.51
+ (arch=!amd64)_ZN13GeographicLib18SphericalHarmonic1C1ERKSt6vectorIdSaIdEES5_iiiS5_S5_iiidj@Base 2.3
+ (arch=!amd64)_ZN13GeographicLib18SphericalHarmonic1C2ERKSt6vectorIdSaIdEES5_iiiS5_S5_iiidj@Base 2.3
  _ZN13GeographicLib18TransverseMercator3UTMEv@Base 1.40
- _ZN13GeographicLib18TransverseMercatorC1Eddd@Base 1.40
- _ZN13GeographicLib18TransverseMercatorC2Eddd@Base 1.40
+ _ZN13GeographicLib18TransverseMercatorC1Edddbb@Base 2.3
+ _ZN13GeographicLib18TransverseMercatorC2Edddbb@Base 2.3
  _ZN13GeographicLib20AzimuthalEquidistantC1ERKNS_8GeodesicE@Base 1.40
  _ZN13GeographicLib20AzimuthalEquidistantC2ERKNS_8GeodesicE@Base 1.40
  _ZN13GeographicLib21LambertConformalConic4InitEddddd@Base 1.40
@@ -282,6 +282,9 @@ libGeographicLib.so.24 #PACKAGE# #MINVER#
  (optional=templinst)_ZN13GeographicLib4Math6atan2dIfEET_S2_S2_@Base 1.50.1
  (optional=templinst|arch=alpha powerpc ppc64 ppc64el s390x)_ZN13GeographicLib4Math6atan2dIgEET_S2_S2_@Base 1.50
  _ZN13GeographicLib4Math6digitsEv@Base 1.50
+ (optional=templinst)_ZN13GeographicLib4Math6hypot3IdEET_S2_S2_S2_@Base 2.4
+ (optional=templinst)_ZN13GeographicLib4Math6hypot3IeEET_S2_S2_S2_@Base 2.4
+ (optional=templinst)_ZN13GeographicLib4Math6hypot3IfEET_S2_S2_S2_@Base 2.4
  (optional=templinst)_ZN13GeographicLib4Math7AngDiffIdEET_S2_S2_RS2_@Base 2.0
  (optional=templinst|arch=!powerpc !ppc64 !ppc64el !s390x)_ZN13GeographicLib4Math7AngDiffIeEET_S2_S2_RS2_@Base 2.0
  (optional=templinst)_ZN13GeographicLib4Math7AngDiffIfEET_S2_S2_RS2_@Base 2.0
@@ -389,8 +392,10 @@ libGeographicLib.so.24 #PACKAGE# #MINVER#
  _ZN13GeographicLib8Geodesic7AstroidEdd@Base 1.40
  _ZN13GeographicLib8Geodesic7C3coeffEv@Base 1.40
  _ZN13GeographicLib8Geodesic7C4coeffEv@Base 1.40
- _ZN13GeographicLib8GeodesicC1Edd@Base 1.40
- _ZN13GeographicLib8GeodesicC2Edd@Base 1.40
+ _ZN13GeographicLib8GeodesicC1Eddb@Base 2.3
+ _ZN13GeographicLib8GeodesicC2Eddb@Base 2.3
+ _ZN13GeographicLib8GeodesicD1Ev@Base 2.3
+ _ZN13GeographicLib8GeodesicD2Ev@Base 2.3
  _ZN13GeographicLib8GnomonicC1ERKNS_8GeodesicE@Base 1.40
  _ZN13GeographicLib8GnomonicC2ERKNS_8GeodesicE@Base 1.40
  _ZN13GeographicLib9Ellipsoid5WGS84Ev@Base 1.40
@@ -399,12 +404,17 @@ libGeographicLib.so.24 #PACKAGE# #MINVER#
  _ZN13GeographicLib9GeoCoords12UTMUPSStringEibddibRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 1.43
  _ZN13GeographicLib9GeoCoords13FixHemisphereEv@Base 1.40
  _ZN13GeographicLib9GeoCoords5ResetERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEbb@Base 1.43
+ _ZN13GeographicLib9Intersect10fixsegmentEddRKNS0_6XPointE@Base 2.3
+ _ZN13GeographicLib9Intersect13fixcoincidentERKNS0_6XPointES3_@Base 2.3
+ _ZN13GeographicLib9Intersect13fixcoincidentERKNS0_6XPointES3_i@Base 2.3
+ _ZN13GeographicLib9IntersectC1ERKNS_8GeodesicE@Base 2.3
+ _ZN13GeographicLib9IntersectC2ERKNS_8GeodesicE@Base 2.3
  _ZN13GeographicLib9RhumbLineC1ERKNS_5RhumbEddd@Base 2.0
  _ZN13GeographicLib9RhumbLineC2ERKNS_5RhumbEddd@Base 2.0
  (optional=templinst|arch=!amd64 !arm64 !ia64 !mips64el !ppc64 !ppc64el !riscv64 !s390x !sparc64)_ZN7kissfftIdEC1Ejb@Base 2.1
- (optional=templinst|arch=amd64 arm64 mips64el ppc64 ppc64el riscv64 s390x sparc64)_ZN7kissfftIdEC1Emb@Base 2.1
+ (optional=templinst|arch=amd64 arm64 ia64 mips64el ppc64 ppc64el riscv64 s390x sparc64)_ZN7kissfftIdEC1Emb@Base 2.1
  (optional=templinst|arch=!amd64 !arm64 !ia64 !mips64el !ppc64 !ppc64el !riscv64 !s390x !sparc64)_ZN7kissfftIdEC2Ejb@Base 2.1
- (optional=templinst|arch=amd64 arm64 mips64el ppc64 ppc64el riscv64 s390x sparc64)_ZN7kissfftIdEC2Emb@Base 2.1
+ (optional=templinst|arch=amd64 arm64 ia64 mips64el ppc64 ppc64el riscv64 s390x sparc64)_ZN7kissfftIdEC2Emb@Base 2.1
  _ZNK13GeographicLib10Geocentric10IntForwardEdddRdS1_S1_Pd@Base 1.40
  _ZNK13GeographicLib10Geocentric10IntReverseEdddRdS1_S1_Pd@Base 1.40
  (optional=templinst)_ZNK13GeographicLib11AccumulatorIdE3SumEd@Base 1.40
@@ -538,6 +548,8 @@ libGeographicLib.so.24 #PACKAGE# #MINVER#
  _ZNK13GeographicLib16EllipticFunction2EdEd@Base 1.40
  _ZNK13GeographicLib16EllipticFunction2PiEd@Base 1.40
  _ZNK13GeographicLib16EllipticFunction2PiEddd@Base 1.40
+ _ZNK13GeographicLib16EllipticFunction2amEd@Base 2.4
+ _ZNK13GeographicLib16EllipticFunction2amEdRdS1_S1_@Base 2.4
  _ZNK13GeographicLib16EllipticFunction4EinvEd@Base 1.40
  _ZNK13GeographicLib16EllipticFunction6deltaDEddd@Base 1.40
  _ZNK13GeographicLib16EllipticFunction6deltaEEddd@Base 1.40
@@ -626,16 +638,38 @@ libGeographicLib.so.24 #PACKAGE# #MINVER#
  _ZNK13GeographicLib9GeoCoords21AltMGRSRepresentationB5cxx11Ei@Base 1.43
  _ZNK13GeographicLib9GeoCoords23AltUTMUPSRepresentationB5cxx11Ebib@Base 1.43
  _ZNK13GeographicLib9GeoCoords23AltUTMUPSRepresentationB5cxx11Eib@Base 1.43
+ _ZNK13GeographicLib9Intersect10ClosestIntERKNS_12GeodesicLineES3_RKNS0_6XPointE@Base 2.3
+ _ZNK13GeographicLib9Intersect10SegmentIntERKNS_12GeodesicLineES3_Ri@Base 2.3
+ _ZNK13GeographicLib9Intersect11AllInternalERKNS_12GeodesicLineES3_dRKSt4pairIddERSt6vectorIiSaIiEEb@Base 2.3
+ _ZNK13GeographicLib9Intersect11distobliqueEPdS1_S1_@Base 2.3
+ _ZNK13GeographicLib9Intersect13ConjugateDistERKNS_12GeodesicLineEdbddd@Base 2.3
+ _ZNK13GeographicLib9Intersect3AllERKNS_12GeodesicLineES3_dRKSt4pairIddE@Base 2.3
+ _ZNK13GeographicLib9Intersect3AllERKNS_12GeodesicLineES3_dRSt6vectorIiSaIiEERKSt4pairIddE@Base 2.3
+ _ZNK13GeographicLib9Intersect3AllEdddddddRKSt4pairIddE@Base 2.3
+ _ZNK13GeographicLib9Intersect3AllEdddddddRSt6vectorIiSaIiEERKSt4pairIddE@Base 2.3
+ _ZNK13GeographicLib9Intersect4NextERKNS_12GeodesicLineES3_Pi@Base 2.3
+ _ZNK13GeographicLib9Intersect4NextEddddPi@Base 2.3
+ _ZNK13GeographicLib9Intersect5BasicERKNS_12GeodesicLineES3_RKNS0_6XPointE@Base 2.3
+ _ZNK13GeographicLib9Intersect6polarbEPdS1_@Base 2.3
+ _ZNK13GeographicLib9Intersect7AllInt0ERKNS_12GeodesicLineES3_dRKNS0_6XPointE@Base 2.3
+ _ZNK13GeographicLib9Intersect7ClosestERKNS_12GeodesicLineES3_RKSt4pairIddEPi@Base 2.3
+ _ZNK13GeographicLib9Intersect7ClosestEddddddRKSt4pairIddEPi@Base 2.3
+ _ZNK13GeographicLib9Intersect7NextIntERKNS_12GeodesicLineES3_@Base 2.3
+ _ZNK13GeographicLib9Intersect7SegmentERKNS_12GeodesicLineES3_RiPi@Base 2.3
+ _ZNK13GeographicLib9Intersect7SegmentEddddddddRiPi@Base 2.3
+ _ZNK13GeographicLib9Intersect8conjdistEdPdS1_S1_@Base 2.3
+ _ZNK13GeographicLib9Intersect9SphericalERKNS_12GeodesicLineES3_RKNS0_6XPointE@Base 2.3
+ _ZNK13GeographicLib9Intersect9distpolarEdPd@Base 2.3
  _ZNK13GeographicLib9RhumbLine11GenPositionEdjRdS1_S1_@Base 1.40
  (optional=templinst)_ZNK7kissfftIdE14transform_realEPKdPSt7complexIdE@Base 2.1
  (optional=templinst|arch=armel armhf hurd-i386 i386 m68k mipsel powerpc)_ZNK7kissfftIdE8kf_bfly3EPSt7complexIdEjj@Base 2.1
  (optional=templinst|arch=armel armhf hurd-i386 i386 m68k mipsel powerpc)_ZNK7kissfftIdE8kf_bfly4EPSt7complexIdEjj@Base 2.1
  (optional=templinst|arch=!amd64 !arm64 !ia64 !mips64el !ppc64 !ppc64el !riscv64 !s390x !sparc64)_ZNK7kissfftIdE8kf_bfly5EPSt7complexIdEjj@Base 2.1
- (optional=templinst|arch=amd64 arm64 mips64el ppc64 ppc64el riscv64 s390x sparc64)_ZNK7kissfftIdE8kf_bfly5EPSt7complexIdEmm@Base 2.1
+ (optional=templinst|arch=amd64 arm64 ia64 mips64el ppc64 ppc64el riscv64 s390x sparc64)_ZNK7kissfftIdE8kf_bfly5EPSt7complexIdEmm@Base 2.1
  (optional=templinst|arch=!amd64 !arm64 !ia64 !mips64el !ppc64 !ppc64el !riscv64 !s390x !sparc64)_ZNK7kissfftIdE9transformEPKSt7complexIdEPS2_jjj@Base 2.1
- (optional=templinst|arch=amd64 arm64 mips64el ppc64 ppc64el riscv64 s390x sparc64)_ZNK7kissfftIdE9transformEPKSt7complexIdEPS2_mmm@Base 2.1
+ (optional=templinst|arch=amd64 arm64 ia64 mips64el ppc64 ppc64el riscv64 s390x sparc64)_ZNK7kissfftIdE9transformEPKSt7complexIdEPS2_mmm@Base 2.1
  (optional=templinst)_ZNKSt5ctypeIcE8do_widenEc@Base 1.40
- (optional=templinst|arch=alpha amd64 arm64 armel armhf hppa hurd-i386 i386 ia64 m68k mips64el mipsel powerpc ppc64 ppc64el riscv64 s390x sh4 sparc64 x32)_ZNSt12_Destroy_auxILb0EE9__destroyIPSt6vectorItSaItEEEEvT_S6_@Base 1.50.1
+ (optional=templinst)_ZNSt12_Destroy_auxILb0EE9__destroyIPSt6vectorItSaItEEEEvT_S6_@Base 2.5
  _ZNSt14_Function_baseD1Ev@Base 2.1
  _ZNSt14_Function_baseD2Ev@Base 2.1
  (optional=templinst|arch=armel riscv64)_ZNSt15_Sp_counted_ptrIDnLN9__gnu_cxx12_Lock_policyE1EE10_M_disposeEv@Base 2.1
@@ -644,7 +678,7 @@ libGeographicLib.so.24 #PACKAGE# #MINVER#
  (optional=templinst|arch=armel riscv64)_ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE1EE10_M_releaseEv@Base 2.1
  (optional=templinst|arch=!armel !riscv64)_ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE10_M_destroyEv@Base 2.1
  (optional=templinst|arch=!armel !riscv64)_ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE10_M_releaseEv@Base 2.1
- (optional=templinst|arch=amd64 arm64 mips64el ppc64 ppc64el s390x)_ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE24_M_release_last_use_coldEv@Base 2.1.1
+ (optional=templinst|arch=amd64 arm64 ia64 mips64el ppc64 ppc64el s390x)_ZNSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE24_M_release_last_use_coldEv@Base 2.1.1
  (optional=templinst)_ZNSt17_Function_handlerIFddEN13GeographicLib13GeodesicExact11I4IntegrandEE10_M_managerERSt9_Any_dataRKS5_St18_Manager_operation@Base 2.1
  (optional=templinst)_ZNSt17_Function_handlerIFddEN13GeographicLib13GeodesicExact11I4IntegrandEE9_M_invokeERKSt9_Any_dataOd@Base 2.1
  (optional=templinst)_ZNSt17_Function_handlerIFddEN13GeographicLib5Rhumb10qIntegrandEE10_M_managerERSt9_Any_dataRKS5_St18_Manager_operation@Base 2.2
@@ -661,21 +695,24 @@ libGeographicLib.so.24 #PACKAGE# #MINVER#
  (optional=templinst|arch=!armel !riscv64)_ZNSt23_Sp_counted_ptr_inplaceI7kissfftIdESaIvELN9__gnu_cxx12_Lock_policyE2EED0Ev@Base 2.1.1
  (optional=templinst|arch=!armel !riscv64)_ZNSt23_Sp_counted_ptr_inplaceI7kissfftIdESaIvELN9__gnu_cxx12_Lock_policyE2EED1Ev@Base 2.1.1
  (optional=templinst|arch=!armel !riscv64)_ZNSt23_Sp_counted_ptr_inplaceI7kissfftIdESaIvELN9__gnu_cxx12_Lock_policyE2EED2Ev@Base 2.1.1
- (optional=templinst)_ZNSt6vectorIN13GeographicLib17SphericalHarmonicESaIS1_EE17_M_realloc_insertIJS1_EEEvN9__gnu_cxx17__normal_iteratorIPS1_S3_EEDpOT_@Base 1.49
- (optional=templinst)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE17_M_realloc_insertIJS5_EEEvN9__gnu_cxx17__normal_iteratorIPS5_S7_EEDpOT_@Base 1.49
+ (optional=templinst)_ZNSt6vectorIN13GeographicLib9Intersect6XPointESaIS2_EE17_M_realloc_appendIJRKS2_EEEvDpOT_@Base 2.5
  (optional=templinst|subst)_ZNSt6vectorIS_IdSaIdEESaIS1_EE17_M_default_appendE{size_t}@Base 1.43
  (optional=templinst)_ZNSt6vectorIS_IdSaIdEESaIS1_EED1Ev@Base 1.40
  (optional=templinst)_ZNSt6vectorIS_IdSaIdEESaIS1_EED2Ev@Base 1.40
  (optional=templinst|subst)_ZNSt6vectorIS_ItSaItEESaIS1_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS1_S3_EE{size_t}RKS1_@Base 1.40
  (optional=templinst|arch=!amd64 !arm64 !ia64 !mips64el !ppc64 !ppc64el !riscv64 !s390x !sparc64)_ZNSt6vectorISt7complexIdESaIS1_EE17_M_default_appendEj@Base 2.1
- (optional=templinst|arch=amd64 arm64 mips64el ppc64 ppc64el riscv64 s390x sparc64)_ZNSt6vectorISt7complexIdESaIS1_EE17_M_default_appendEm@Base 2.1
- _ZNSt6vectorIdSaIdEE12emplace_backIJdEEEvDpOT_@Base 2.0
+ (optional=templinst|arch=amd64 arm64 ia64 mips64el ppc64 ppc64el riscv64 s390x sparc64)_ZNSt6vectorISt7complexIdESaIS1_EE17_M_default_appendEm@Base 2.1
  (optional=templinst|subst)_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EE{size_t}RKd@Base 1.40
  (optional=templinst|subst)_ZNSt6vectorIdSaIdEE17_M_default_appendE{size_t}@Base 1.43
+ (optional=templinst)_ZNSt6vectorIdSaIdEE17_M_realloc_appendIJdEEEvDpOT_@Base 2.5
  (optional=templinst)_ZNSt6vectorIdSaIdEED1Ev@Base 1.40
  (optional=templinst)_ZNSt6vectorIdSaIdEED2Ev@Base 1.40
+ (optional=templinst|arch=!amd64 !ia64 !ppc64 !ppc64el !sparc64)_ZNSt6vectorIiSaIiEE17_M_default_appendEj@Base 2.3
+ (optional=templinst)_ZNSt6vectorIiSaIiEE17_M_default_appendEm@Base 2.3
  (optional=templinst|arch=!amd64 !arm64 !ia64 !mips64el !ppc64 !ppc64el !riscv64 !s390x !sparc64)_ZNSt6vectorIjSaIjEE17_M_realloc_insertIJRKjEEEvN9__gnu_cxx17__normal_iteratorIPjS1_EEDpOT_@Base 2.1
- (optional=templinst|arch=amd64 arm64 mips64el ppc64 ppc64el riscv64 s390x sparc64)_ZNSt6vectorImSaImEE17_M_realloc_insertIJRKmEEEvN9__gnu_cxx17__normal_iteratorIPmS1_EEDpOT_@Base 2.1
+ (optional=templinst|arch=!amd64 !ia64 !ppc64 !ppc64el !sparc64)_ZNSt6vectorIjSaIjEED1Ev@Base 2.3
+ (optional=templinst|arch=!amd64 !ia64 !ppc64 !ppc64el !sparc64)_ZNSt6vectorIjSaIjEED2Ev@Base 2.3
+ (optional=templinst)_ZNSt6vectorImSaImEE17_M_realloc_appendIJRKmEEEvDpOT_@Base 2.5
  (optional=templinst|subst)_ZNSt6vectorItSaItEE17_M_default_appendE{size_t}@Base 1.49
  (optional=templinst|arch=!alpha !amd64 !arm64 !armel !armhf !hppa !hurd-i386 !i386 !ia64 !m68k !mips64el !mipsel !powerpc !ppc64 !ppc64el !riscv64 !s390x !sh4 !sparc64 !x32)_ZNSt6vectorItSaItEEaSERKS1_@Base 1.40
  (optional=templinst|arch=!alpha !amd64 !arm64 !armel !armhf !hppa !hurd-i386 !i386 !ia64 !m68k !mips64el !mipsel !powerpc !ppc64 !ppc64el !riscv64 !s390x !sh4 !sparc64 !x32)_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag@Base 1.49
@@ -684,12 +721,19 @@ libGeographicLib.so.24 #PACKAGE# #MINVER#
  (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 1.43
  (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 1.43
  _ZNSt7__cxx119to_stringEi@Base 2.1
+ (optional=templinst|arch=ia64 ppc64el sparc64)_ZNSt8_Rb_treeIN13GeographicLib9Intersect6XPointES2_St9_IdentityIS2_ENS1_7SetCompESaIS2_EE24_M_get_insert_unique_posERKS2_@Base 2.3
+ (optional=templinst)_ZNSt8_Rb_treeIN13GeographicLib9Intersect6XPointES2_St9_IdentityIS2_ENS1_7SetCompESaIS2_EE4findERKS2_@Base 2.3
+ (optional=templinst|arch=!amd64 !ia64 !ppc64 !ppc64el !sparc64)_ZSt13__adjust_heapIN9__gnu_cxx17__normal_iteratorIPN13GeographicLib9Intersect6XPointESt6vectorIS4_SaIS4_EEEEiS4_NS0_5__ops15_Iter_comp_iterINS3_9RankPointEEEEvT_T0_SF_T1_T2_@Base 2.3
+ (optional=templinst)_ZSt13__adjust_heapIN9__gnu_cxx17__normal_iteratorIPN13GeographicLib9Intersect6XPointESt6vectorIS4_SaIS4_EEEElS4_NS0_5__ops15_Iter_comp_iterINS3_9RankPointEEEEvT_T0_SF_T1_T2_@Base 2.3
+ (optional=templinst)_ZSt16__insertion_sortIN9__gnu_cxx17__normal_iteratorIPN13GeographicLib9Intersect6XPointESt6vectorIS4_SaIS4_EEEENS0_5__ops15_Iter_comp_iterINS3_9RankPointEEEEvT_SE_T0_@Base 2.3
+ (optional=templinst|arch=!amd64 !ia64 !ppc64 !ppc64el !sparc64)_ZSt16__introsort_loopIN9__gnu_cxx17__normal_iteratorIPN13GeographicLib9Intersect6XPointESt6vectorIS4_SaIS4_EEEEiNS0_5__ops15_Iter_comp_iterINS3_9RankPointEEEEvT_SE_T0_T1_@Base 2.3
+ (optional=templinst)_ZSt16__introsort_loopIN9__gnu_cxx17__normal_iteratorIPN13GeographicLib9Intersect6XPointESt6vectorIS4_SaIS4_EEEElNS0_5__ops15_Iter_comp_iterINS3_9RankPointEEEEvT_SE_T0_T1_@Base 2.3
  (optional=templinst|subst)_ZSt18__do_uninit_fill_nIPSt6vectorItSaItEE{size_t}S2_ET_S4_T0_RKT1_@Base 2.1.1
+ (optional=templinst)_ZSt25__unguarded_linear_insertIN9__gnu_cxx17__normal_iteratorIPN13GeographicLib9Intersect6XPointESt6vectorIS4_SaIS4_EEEENS0_5__ops14_Val_comp_iterINS3_9RankPointEEEEvT_T0_@Base 2.3
+ (optional=templinst)_ZSteqIcSt11char_traitsIcESaIcEEbRKNSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_@Base 2.3
  (optional=templinst|arch=kfreebsd-amd64)_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_RKS8_@Base 1.43
  (optional=templinst)_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEOS8_S9_@Base 1.43
  (optional=templinst|arch=amd64 arm64 kfreebsd-amd64 x32)_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_OS8_@Base 1.43
- (optional=templinst)_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_@Base 1.43
- (optional=templinst|arch=amd64 arm64 armel armhf hppa hurd-i386 i386 ia64 m68k mips64el powerpc ppc64 ppc64el riscv64 s390x sh4 sparc64 x32)_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EERKS8_PKS5_@Base 1.51
  _ZTIN13GeographicLib13GeodesicExact11I4IntegrandE@Base 2.1
  _ZTIN13GeographicLib13GeographicErrE@Base 1.40
  _ZTIN13GeographicLib5Rhumb10qIntegrandE@Base 2.2
@@ -725,5 +769,3 @@ libGeographicLib.so.24 #PACKAGE# #MINVER#
  (optional=templinst)_ZZN13GeographicLib4Math6degreeIfEET_vE6degree@Base 1.50.1
  (optional=templinst|arch=alpha powerpc ppc64 ppc64el s390x)_ZZN13GeographicLib4Math6degreeIgEET_vE6degree@Base 1.50
  _ZZNSt19_Sp_make_shared_tag5_S_tiEvE5__tag@Base 2.1
- (optional=templinst)_ZZNSt8__detail18__to_chars_10_implIjEEvPcjT_E8__digits@Base 2.0
- (optional=templinst)_ZZNSt8__detail18__to_chars_10_implIyEEvPcjT_E8__digits@Base 2.0

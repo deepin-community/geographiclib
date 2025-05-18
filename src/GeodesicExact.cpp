@@ -2,7 +2,7 @@
  * \file GeodesicExact.cpp
  * \brief Implementation for GeographicLib::GeodesicExact class
  *
- * Copyright (c) Charles Karney (2012-2023) <charles@karney.com> and licensed
+ * Copyright (c) Charles Karney (2012-2023) <karney@alum.mit.edu> and licensed
  * under the MIT/X11 License.  For more information, see
  * https://geographiclib.sourceforge.io/
  *
@@ -31,9 +31,8 @@
 #include <vector>
 
 #if defined(_MSC_VER)
-// Squelch warnings about potentially uninitialized local variables,
-// constant conditional and enum-float expressions and mixing enums
-#  pragma warning (disable: 4701 4127 5055 5054)
+// Squelch warnings about potentially uninitialized local variables
+#  pragma warning (disable: 4701)
 #endif
 
 namespace GeographicLib {
@@ -490,7 +489,7 @@ namespace GeographicLib {
     // check, e.g., on verifying quadrants in atan2.  In addition, this
     // enforces some symmetries in the results returned.
 
-    real sbet1, cbet1, sbet2, cbet2, s12x, m12x;
+    real sbet1, cbet1, sbet2, cbet2, s12x, m12x = Math::NaN();
     // Initialize for the meridian.  No longitude calculation is done in this
     // case to let the parameter default to 0.
     EllipticFunction E(-_ep2);

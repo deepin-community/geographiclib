@@ -1,0 +1,4 @@
+doc/html/*
+doc/GeographicLib.dox
+include/GeographicLib/Config.h
+man/geographiclib-get-*.8

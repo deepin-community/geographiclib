@@ -6,9 +6,10 @@ Section: science
 Priority: optional
 Build-Depends: autoconf-archive,
                debhelper-compat (= 13),
+               dh-sequence-pkgkde-symbolshelper,
                doxygen,
                pkg-kde-tools
-Standards-Version: 4.6.2
+Standards-Version: 4.7.0
 Vcs-Browser: https://salsa.debian.org/debian-gis-team/geographiclib
 Vcs-Git: https://salsa.debian.org/debian-gis-team/geographiclib.git
 Homepage: https://geographiclib.sourceforge.io/
@@ -45,7 +46,7 @@ Description: C++ library to solve some geodesic problems -- documentation
  .
  This package contains the documentation for the GeographicLib tools.
 
-Package: libgeographiclib24
+Package: libgeographiclib26
 Architecture: any
 Multi-Arch: same
 Section: libs
@@ -67,7 +68,7 @@ Architecture: any
 Section: libdevel
 Breaks: libgeographic-dev (<< 2.0)
 Replaces: libgeographic-dev (<< 2.0)
-Depends: libgeographiclib24 (= ${binary:Version}),
+Depends: libgeographiclib26 (= ${binary:Version}),
          ${misc:Depends}
 Suggests: geographiclib-doc
 Description: C++ library to solve some geodesic problems -- development files

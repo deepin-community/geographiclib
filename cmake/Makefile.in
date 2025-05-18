@@ -17,7 +17,7 @@
 #
 # Makefile.am
 #
-# Copyright (C) 2011-2022, Charles Karney <charles@karney.com>
+# Copyright (C) 2011-2022, Charles Karney <karney@alum.mit.edu>
 VPATH = @srcdir@
 am__is_gnu_make = { \
   if test -z '$(MAKELEVEL)'; then \
@@ -245,6 +245,7 @@ htmldir = @htmldir@
 includedir = @includedir@
 infodir = @infodir@
 install_sh = @install_sh@
+lib_postfix = @lib_postfix@
 libdir = @libdir@
 libexecdir = @libexecdir@
 localedir = @localedir@

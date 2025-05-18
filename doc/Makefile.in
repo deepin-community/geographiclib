@@ -240,6 +240,7 @@ htmldir = $(DESTDIR)$(docdir)/html
 includedir = @includedir@
 infodir = @infodir@
 install_sh = @install_sh@
+lib_postfix = @lib_postfix@
 libdir = @libdir@
 libexecdir = @libexecdir@
 localedir = @localedir@
@@ -360,6 +361,7 @@ MANPAGES = \
 	../man/GeodSolve.1.html \
 	../man/GeoidEval.1.html \
 	../man/Gravity.1.html \
+	../man/IntersectTool.1.html \
 	../man/MagneticField.1.html \
 	../man/Planimeter.1.html \
 	../man/RhumbSolve.1.html \

@@ -7,6 +7,7 @@ usr/bin/GeodesicProj
 usr/bin/GeodSolve
 usr/bin/GeoidEval
 usr/bin/Gravity
+usr/bin/IntersectTool
 usr/bin/MagneticField
 usr/bin/Planimeter
 usr/bin/TransverseMercatorProj

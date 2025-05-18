@@ -2,7 +2,7 @@
  * \file MagneticModel.cpp
  * \brief Implementation for GeographicLib::MagneticModel class
  *
- * Copyright (c) Charles Karney (2011-2021) <charles@karney.com> and licensed
+ * Copyright (c) Charles Karney (2011-2021) <karney@alum.mit.edu> and licensed
  * under the MIT/X11 License.  For more information, see
  * https://geographiclib.sourceforge.io/
  **********************************************************************/
@@ -22,7 +22,7 @@
 #endif
 
 #if !defined(GEOGRAPHICLIB_MAGNETIC_DEFAULT_NAME)
-#  define GEOGRAPHICLIB_MAGNETIC_DEFAULT_NAME "wmm2020"
+#  define GEOGRAPHICLIB_MAGNETIC_DEFAULT_NAME "wmm2025"
 #endif
 
 #if defined(_MSC_VER)
@@ -109,6 +109,11 @@ namespace GeographicLib {
     if (n != string::npos)
       n -= 5;
     string version(line, 5, n);
+    // version 2 added treatment of NumConstants.  The MagneticModel class now
+    // accepts NumConstants for version = 1 or 2.  (The version logic was
+    // necessary to allow old versions of GeographicLib, which didn't
+    // understand NumConstants, to complain when it encountered a version 2
+    // file.)
     if (!(version == "1" || version == "2"))
       throw GeographicErr("Unknown version in " + _filename + ": " + version);
     string key, val;

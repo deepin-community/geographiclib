@@ -5,12 +5,12 @@ Forwarded: not-needed
 
 --- a/doc/doxyfile.in
 +++ b/doc/doxyfile.in
-@@ -2356,7 +2356,7 @@ TAGFILES               =
+@@ -2410,7 +2410,7 @@ TAGFILES               =
  # tag file that is based on the input files it reads. See section "Linking to
  # external documentation" for more information about the usage of tag files.
  
 -GENERATE_TAGFILE       = html/GeographicLib.tag
 +GENERATE_TAGFILE       =
  
- # If the ALLEXTERNALS tag is set to YES, all external class will be listed in
- # the class index. If set to NO, only the inherited external classes will be
+ # If the ALLEXTERNALS tag is set to YES, all external classes and namespaces
+ # will be listed in the class and namespace index. If set to NO, only the
