@@ -1,0 +1,68 @@
+Description: Fix CVE-2025-60751: stack-based buffer overflow in DMS.cpp
+ Fix buffer overflow in DMS::InternalDecode function by adding bounds checking
+ for the number of components in DMS (degrees/minutes/seconds) string parsing.
+ .
+ The vulnerability existed because the code used a fixed-size array (3 elements)
+ for ipieces and fpieces but didn't properly validate that the input string
+ didn't contain more than 3 components, potentially leading to a buffer overflow.
+Author: Charles Karney <karney@alum.mit.edu>
+Origin: upstream, https://github.com/geographiclib/geographiclib/commit/aec521dff5ec0757cdefa018b152fffcfbca3eac
+Bug: https://security-tracker.debian.org/tracker/CVE-2025-60751
+Forwarded: not-needed
+---
+ src/DMS.cpp | 14 ++++++++++----
+ 1 file changed, 10 insertions(+), 4 deletions(-)
+
+diff --git a/src/DMS.cpp b/src/DMS.cpp
+index 8a30340f..d9c552a1 100644
+--- a/src/DMS.cpp
++++ b/src/DMS.cpp
+@@ -190,6 +190,7 @@ namespace GeographicLib {
+   }
+ 
+   Math::real DMS::InternalDecode(const string& dmsa, flag& ind) {
++    const int maxcomponents = 3;
+     string errormsg;
+     do {                       // Executed once (provides the ability to break)
+       int sign = 1;
+@@ -232,8 +233,8 @@ namespace GeographicLib {
+         errormsg = "Empty or incomplete DMS string " + dmsa;
+         break;
+       }
+-      real ipieces[] = {0, 0, 0};
+-      real fpieces[] = {0, 0, 0};
++      real ipieces[maxcomponents] = {0, 0, 0};
++      real fpieces[maxcomponents] = {0, 0, 0};
+       unsigned npiece = 0;
+       real icurrent = 0;
+       real fcurrent = 0;
+@@ -259,7 +260,7 @@ namespace GeographicLib {
+           pointseen = true;
+           digcount = 1;
+         } else if ((k = Utility::lookup(dmsindicators_, x)) >= 0) {
+-          if (k >= 3) {
++          if (k >= maxcomponents) {
+             if (p == end) {
+               errormsg = "Illegal for : to appear at the end of " +
+                 dmsa.substr(beg, end - beg);
+@@ -292,6 +293,11 @@ namespace GeographicLib {
+           fpieces[k] = icurrent + fcurrent;
+           if (p < end) {
+             npiece = k + 1;
++            if (npiece >= maxcomponents) {
++              errormsg = "More than 3 DMS components in "
++                + dmsa.substr(beg, end - beg);
++              break;
++            }
+             icurrent = fcurrent = 0;
+             ncurrent = digcount = intcount = 0;
+           }
+@@ -308,7 +314,7 @@ namespace GeographicLib {
+       if (!errormsg.empty())
+         break;
+       if (Utility::lookup(dmsindicators_, dmsa[p - 1]) < 0) {
+-        if (npiece >= 3) {
++        if (npiece >= maxcomponents) {
+           errormsg = "Extra text following seconds in DMS string "
+             + dmsa.substr(beg, end - beg);
+           break;

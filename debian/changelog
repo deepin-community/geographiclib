@@ -1,3 +1,9 @@
+geographiclib (2.5-1deepin1) unstable; urgency=medium
+
+  * Fix CVE-2025-60751: stack-based buffer overflow in DMS.cpp
+
+ -- deepin-ci-robot <packages@deepin.org>  Sat, 25 Apr 2026 04:21:15 +0800
+
 geographiclib (2.5-1) unstable; urgency=medium
 
   * New upstream release.

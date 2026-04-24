@@ -1,3 +1,4 @@
 css.patch
 privacy.patch
 reproducible-build.patch
+cve_2025_60751.patch
